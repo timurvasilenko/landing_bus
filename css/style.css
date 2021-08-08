@@ -341,7 +341,7 @@ a{
 
 #contacts div.panel{
     flex: 1;
-    background-image: url(img/bg_contacts_dark.png);
+    background-image: url("../img/bg_contacts_dark.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
