@@ -1,0 +1,395 @@
+@import url("/css/variables.css");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Common */
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.panel {
+    border-radius: 13px;
+    box-shadow: 0 1px 8px 0 rgba(99, 99, 99, 0.2);
+    padding: 40px;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Header */
+
+#header{
+    width: 100%;
+    height: 70px;
+    background-color: var(--c_light);
+    box-shadow: 0 1px 8px 0 rgba(99, 99, 99, 0.2);
+    margin-bottom: 40px;
+    /* TODO: из-за sticky ссылки скроллят чуть ниже, чем нужно (заметно только с "О компании") */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow: hidden;
+}
+
+#header .container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .logo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--c_dark);
+    
+}
+
+#header h1{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+#header nav ul{
+    display: flex;
+    list-style-type: none;
+}
+
+#header nav a{
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--c_dark_alt);
+    margin: 0 12px;
+}
+
+#header nav a:hover{
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--c_dark_alt);
+    margin: 0 12px;
+    transform: translateY(1px);
+}
+
+#header nav .active{
+    color: var(--c_dark);
+}
+
+#header nav .active::before{
+    position: absolute;
+    transform: translateY(-10px);
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: var(--c_blue);
+    z-index: 999;
+    border-radius: 50%;
+}
+
+.btn_call{
+    height: 48px;
+    background-color: var(--c_blue);
+    color: var(--c_light);
+    font-weight: 800;
+    font-size: 14px;
+    text-align: center;
+    line-height: 49px;
+    padding:0 15px;
+    border-radius: 13px;
+}
+
+.btn_call:hover{
+    background-color: var(--c_blue_alt);
+}
+
+.btn_call:active{
+    transform: translateY(2px);
+    box-shadow: inset 0 0 0 5px var(--c_blue_alt);
+}
+
+/* About */
+
+#about{
+    background: linear-gradient(90deg, var(--c_gradient_1_1) 0%, var(--c_gradient_1_2) 100%);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+}
+
+#about h2{
+    color: var(--c_light);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 20px;
+    margin-bottom: 25px;
+}
+
+#about p{
+    max-width: 620px;
+    color: var(--c_light_alt);
+    font-size: 21px;
+    line-height: 24px;
+}
+
+#about img{
+    position: absolute;
+    right: 0;
+    transform: translateX(30px) translateY(10px);
+}
+
+/* Buses */
+
+.splide__slide{
+    color: var(--c_dark)
+}
+
+.splide .panel{
+    box-shadow: inset 0 1px 8px 0 rgba(99, 99, 99, 0.2);
+    padding: 30px;
+}
+
+.splide img{
+    width: 100%!important;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0,0.02);
+}
+
+.splide h2{
+    font-weight: 600;
+    font-size: 24px;
+    margin: 18px 0 5px
+}
+
+.splide p{
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.splide__pagination{
+    padding-top: 40px;
+    width: 100% !important;
+}
+
+.splide__pagination .is-active{
+    background-color: var(--c_blue);
+}
+
+.splide__pagination__page{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--c_dark);
+    margin: 0 8px;
+}
+
+.splide__arrows{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+}
+
+.splide__arrow{
+    opacity: 0.9;
+    margin-top: 33px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.splide__arrow:disabled{
+    cursor: default;
+}
+
+.splide__arrow img{
+    width: 25px;
+    height: 40px;
+    box-shadow: none;
+}
+
+.splide__arrow--prev img{
+    transform: rotate(180deg);
+}
+
+.splide__arrow:disabled{
+    opacity: 0.3;
+}
+
+.splide__arrow:hover:enabled{
+    opacity: 1;
+}
+
+/* Price */
+#price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, var(--c_gradient_2_1) 0%, var(--c_gradient_2_2) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#price .bus2{
+    position: absolute;
+    left: 0;
+    transform: translateX(-150px) translateY(-5px);
+}
+
+#price .price{
+    z-index: 200;
+}
+
+.tg {
+    border-radius: 13px;
+    background-color: rgba(255, 255, 255, 0.22);
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    table-layout: fixed;
+    overflow: hidden;
+    color: var(--c_dark);
+}
+
+.tg td {
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 28px;
+    word-break: normal;
+}
+
+.tg th {
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-9wq8 {
+    border-color: inherit;
+    text-align: center;
+    vertical-align: middle
+}
+
+.tg .tg-nrix {
+    text-align: center;
+    vertical-align: middle
+}
+
+.tg td{
+    font-weight: normal;
+    font-size: 15px;
+    color: var(--c_dark_alt2);
+    font-family: 'Nunito', sans-serif;
+}
+
+.tg thead{
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.tg th{
+    font-weight: bold;
+    font-size: 17px;
+    color: var(--c_dark);
+    font-family: 'Nunito', sans-serif;
+}
+
+.tg tr:nth-child(even){
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Contacts */
+
+#contacts{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+    width: 100%;
+    color: var(--c_light);
+}
+
+
+#contacts div.panel{
+    flex: 1;
+    background-image: url(/img/bg_contacts_dark.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#contacts h2{
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 30px; 
+}
+
+#contacts .email{
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 24px;
+    color: var(--c_light);
+}
+
+#contacts .btn_call{
+    font-weight: 800;
+    font-size: 23px;
+    height: 64px;
+    line-height: 65px;
+    padding: 0 20px;
+}
+
+#contacts iframe.panel{
+    padding: 5px;
+    width: 500px;
+    height: 330px;
+}
+
+/* Footer */
+
+footer{
+    width: 100%;
+    height: 50px;
+    background-color: var(--c_light);
+    box-shadow: 0 1px 8px 0 rgba(99, 99, 99, 0.2);
+    color: var(--c_dark_alt);
+    font-weight: 300;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
